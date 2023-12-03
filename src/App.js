@@ -30,7 +30,7 @@ function App() {
       contextDemo.fillText(inputName.current.value, 675, 705);
 
       context.drawImage(imageObj, 0, 0);
-      context.font = "40px Bonheur Royale";
+      context.font = "78px Bonheur Royale";
       context.textAlign = "end";
       context.fillStyle = color;
       context.fillText(inputName.current.value, 1350, 1410);
@@ -39,19 +39,6 @@ function App() {
   };
 
   const onDownload = () => {
-    // const context = myCanvas.current.getContext("2d");
-    // const imageObj = new Image();
-    //
-    // if (!inputName.current.value) return;
-    //
-    // imageObj.onload = function () {
-    //   context.drawImage(imageObj, 0, 0);
-    //   context.font = "40pt Serif";
-    //   context.textAlign = "end";
-    //   context.fillStyle = color;
-    //   context.fillText(inputName.current.value, 1350, 1400);
-    // };
-    // imageObj.src = template;
     const url = myCanvas.current.toDataURL("image/png");
     const link = document.createElement("a");
     link.download = `${inputName.current.value
@@ -64,6 +51,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <h2>Thiệp điện tử</h2>
         <div
           style={{
             display: "flex",
@@ -72,7 +60,7 @@ function App() {
             alignItems: "center",
           }}
         >
-          Tên
+          <h6>Tên</h6>
           <input ref={inputName} onChange={changeName} />
           <input
             width={20}
